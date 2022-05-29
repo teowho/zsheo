@@ -1,0 +1,2 @@
+# zsheo
+Zsh config.
