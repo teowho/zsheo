@@ -1,0 +1,8 @@
+abbr -="cd -"
+
+abbr gco="git checkout"
+abbr gcb="git checkout -b"
+abbr gcB="git checkout -B"
+
+abbr untar="tar zxvf"
+abbr zz="exit"
