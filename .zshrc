@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZDOTDIR=$(dirname $0)
+export ZDOTDIR=$(realpath $(dirname "$BASH_SOURCE"))
 
 source $ZDOTDIR/lib/antidote.zsh
 source $ZDOTDIR/lib/zephyr.zsh
@@ -23,9 +23,3 @@ export PAGER='less'
 export ABBR_USER_ABBREVIATIONS_FILE=$ZDOTDIR/abbreviations
 
 export fpath=($ZDOTDIR/completions $fpath)
-
-# load module for list-style selection
-zmodload zsh/complist
-
-# use the module above for autocomplete selection
-zstyle ':completion:*' menu yes select
