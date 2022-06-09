@@ -20,3 +20,4 @@ foo.*
 functions/foo
 plugins/
 zephyr/
+.zplug/

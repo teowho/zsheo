@@ -1,7 +1,7 @@
 ZEPHYR_HOME=${ZDOTDIR:-~}/zephyr
 [[ -e $ZEPHYR_HOME ]] || \
   git clone --depth=1 git@github.com:mattmc3/zephyr $ZEPHYR_HOME
-#ZEPHYR_HOME=~/Projects/mattmc3/zephyr
+ZEPHYR_HOME=~/Projects/mattmc3/zephyr
 
 export ZSH=$ZDOTDIR/.plugins/ohmyzsh/ohmyzsh
 export ZSH_THEME=theunraveler
