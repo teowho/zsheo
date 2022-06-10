@@ -5,11 +5,19 @@ alias bb="bd 1"
 
 alias grep='grep --color'
 
-alias ls="exa"
-alias l='exa -lFh'     #size,show type,human readable
-alias la='exa -lAFh'   #long list,show almost all,show type,human readable
-alias ll='exa -l'      #long list
+# general use
+alias ls='exa' # ls
+alias l='exa -lbF --git' # list, size, type, git
+alias ll='exa -lbGF --git' # long list
+alias llm='exa -lbGd --git --sort=modified' # long list, modified date sort
+alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale' # all list
+alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
 
+# specialty views
+alias lS='exa -1' # one column, just names
+alias l1='exa --tree --level=1'
+alias l2='exa --tree --level=2'
+alias l3='exa --tree --level=3'
 
 alias ex="extract"
 alias du="dust"
@@ -59,6 +67,8 @@ alias gstp="git stash pop"
 alias grc="gh repo clone"
 alias grcd="gh repo clone deepmirrorinc/"
 alias op="gh pr view --web"
+
+alias p38="python3.8"
 
 alias s2="sha256sum"
 alias zz="exit"
