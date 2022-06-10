@@ -21,3 +21,4 @@ functions/foo
 plugins/
 zephyr/
 .zplug/
+.zcalc_history

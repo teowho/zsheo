@@ -1,6 +1,7 @@
 alias _='sudo'
 alias -- -='cd -'
 alias b="bat"
+alias bb="bd 1"
 
 alias grep='grep --color'
 
@@ -11,6 +12,9 @@ alias ll='exa -l'      #long list
 
 
 alias ex="extract"
+alias du="dust"
+
+alias d="docker"
 
 alias g="git"
 alias ga="git add"
@@ -31,10 +35,10 @@ alias gd="git diff"
 alias gdca="git diff --cached"
 alias gdm="git diff master"
 alias gl="git pull"
-alias ggl="git pull origin $(git_current_branch)"
+alias ggl='git pull origin $(git_current_branch)'
 alias gp="git push"
-alias ggp="git push origin $(git_current_branch)"
-alias ggf="git push --force origin $(git_current_branch)"
+alias ggp='git push origin $(git_current_branch)'
+alias ggf='git push --force origin $(git_current_branch)'
 alias glg="git log --stat"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --aliasev-commit --date=relative"
 alias grb="git rebase"
@@ -42,7 +46,7 @@ alias grba="git rebase --abort"
 alias grbc="git rebase --continue"
 alias grbs="git rebase --skip"
 alias grbi="git rebase -i"
-alias grbm="git pull --rebase origin $(git_main_branch)"
+alias grbm='git pull --rebase origin $(git_main_branch)'
 alias grh="git reset"
 alias grhh="git reset --hard"
 alias grm="git rm"
@@ -58,6 +62,9 @@ alias op="gh pr view --web"
 
 alias s2="sha256sum"
 alias zz="exit"
+
+alias lower="tr '[:upper:]' '[:lower:]'"
+alias upper="tr '[:lower:]' '[:upper:]'"
 
 
 # open browser on urls
