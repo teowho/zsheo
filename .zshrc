@@ -57,7 +57,6 @@ fi
 # To customize prompt, run `p10k configure` or edit $ZDOTDIR/.p10k.zsh.
 source $ZDOTDIR/.p10k.zsh
 source $ZDOTDIR/aliases.zsh
-source $ZDOTDIR/lib/quick-exa.zsh
 
 setopt autocd
 
@@ -70,11 +69,13 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
+zle -N quick-exa
 
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
 bindkey '^K^U' _mtxr-to-upper # Ctrl+K + Ctrl+U
 bindkey '^K^L' _mtxr-to-lower # Ctrl+K + Ctrl+L
+bindkey '^@' quick-exa
 bindkey -M vicmd ' ' vi-easy-motion
 
 source $HOME/.config/broot/launcher/bash/br
