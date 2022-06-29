@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+function quick-exa() {
+    echo
+    if git rev-parse --is-inside-work-tree &> /dev/null; then
+        git status
+    else
+        exa -alhF -I="bazel-*" --no-user --no-permissions --no-time -s=type
+    fi
+    zle reset-prompt
+}

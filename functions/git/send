@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+function send() {
+  if [ $# -eq 0 ]; then
+    MSG="Update"
+  else
+    MSG="$@"
+  fi
+
+  git add -u
+  git commit -m $MSG
+  git pull --rebase origin $(git_main_branch)
+  git push -f origin $(git_current_branch)
+
+  unset MSG
+}

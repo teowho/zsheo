@@ -4,12 +4,12 @@ export ZPLUG_HOME=$ZDOTDIR/.zplug
 
 source $ZPLUG_HOME/init.zsh
 
-bindkey -v # Enable vi mode.
+# bindkey -v # Enable vi mode.
 
 zplug "Aloxaf/fzf-tab", depth:1
 zplug "Bhupesh-V/ugit", defer:2, depth:1
-zplug "IngoMeyer441/zsh-easy-motion", depth:1
-zplug "MichaelAquilina/zsh-auto-notify", defer:2, depth:1
+# zplug "IngoMeyer441/zsh-easy-motion", depth:1
+# zplug "MichaelAquilina/zsh-auto-notify", defer:2, depth:1
 zplug "Tarrasch/zsh-bd", depth:1
 zplug "arzzen/calc.plugin.zsh", defer:2, depth:1
 zplug "changyuheng/fz", depth:1
@@ -65,6 +65,10 @@ autoload -U history-search-end
 autoload-dir $ZDOTDIR/functions
 autoload-dir $ZDOTDIR/functions/git
 
+autoload -U select-word-style
+select-word-style bash
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 zle -N history-beginning-search-backward-end history-search-end
@@ -76,7 +80,15 @@ bindkey "^[[B" history-beginning-search-forward-end
 bindkey '^K^U' _mtxr-to-upper # Ctrl+K + Ctrl+U
 bindkey '^K^L' _mtxr-to-lower # Ctrl+K + Ctrl+L
 bindkey '^@' quick-exa
-bindkey -M vicmd ' ' vi-easy-motion
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^H" backward-kill-word
+bindkey "^[[3;5~" kill-word
+bindkey "^W" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^A" backward-word
+bindkey "^D" forward-word
+# bindkey -M vicmd ' ' vi-easy-motion
 
 source $HOME/.config/broot/launcher/bash/br
 source $HOME/.fzf/shell/key-bindings.zsh
@@ -91,6 +103,6 @@ export HISTFILE=$HOME/.zsh_history
 export SAVEHIST=100000
 export HISTSIZE=200000
 
-export AUTO_NOTIFY_IGNORE=("python" "python3.8" "ssh")
+# export AUTO_NOTIFY_IGNORE=("python" "python3.8" "ssh")
 export PATH=$PATH:$HOME/.fzf/bin
 export fpath=($ZDOTDIR/completions $fpath)
