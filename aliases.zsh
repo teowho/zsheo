@@ -72,6 +72,7 @@ alias op="gh pr view --web"
 alias p38="python3.8"
 
 alias s2="sha256sum"
+alias t="trans :zh"
 alias zz="exit"
 
 alias lower="tr '[:upper:]' '[:lower:]'"

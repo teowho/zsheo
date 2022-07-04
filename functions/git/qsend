@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+function qsend() {
+  if [ $# -eq 0 ]; then
+    MSG="Update"
+  else
+    MSG="$@"
+  fi
+
+  git add -u
+  git commit -m $MSG
+  git push -f origin $(git_current_branch)
+
+  unset MSG
+}
