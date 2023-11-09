@@ -3,6 +3,10 @@ alias -- -='cd -'
 alias b="bat"
 alias bb="bd 1"
 
+alias ag1="ag --context=1"
+alias ag2="ag --context=2"
+alias ag3="ag --context=3"
+
 alias grep='grep --color'
 
 # general use
@@ -66,7 +70,6 @@ alias gstl="git stash list"
 alias gstp="git stash pop"
 
 alias grc="gh repo clone"
-alias grcd="gh repo clone deepmirrorinc/"
 alias op="gh pr view --web"
 
 alias p38="python3.8"
