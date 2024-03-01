@@ -70,7 +70,7 @@ alias gstl="git stash list"
 alias gstp="git stash pop"
 
 alias grc="gh repo clone"
-alias op="gh pr view --web"
+alias op="gh pr view --web || gh pr create --web"
 
 alias p38="python3.8"
 

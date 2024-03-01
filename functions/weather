@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+function weather() {
+  CITY=${1:-shenzhen}
+  curl "wttr.in/${CITY}?m"
+}
+

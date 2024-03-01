@@ -4,5 +4,4 @@ export ZDOTDIR=$HOME/zsheo
 export FZF_BASE=$HOME/.fzf
 source $ZDOTDIR/.zshrc
 
-
-source /home/teonsean/.config/broot/launcher/bash/br
+source /Users/teo/.config/broot/launcher/bash/br

@@ -8,14 +8,11 @@ source $ZPLUG_HOME/init.zsh
 
 zplug "Aloxaf/fzf-tab", depth:1
 zplug "Bhupesh-V/ugit", defer:2, depth:1
-# zplug "IngoMeyer441/zsh-easy-motion", depth:1
-# zplug "MichaelAquilina/zsh-auto-notify", defer:2, depth:1
+zplug "MichaelAquilina/zsh-autoswitch-virtualenv", depth:1
 zplug "Tarrasch/zsh-bd", depth:1
 zplug "arzzen/calc.plugin.zsh", defer:2, depth:1
 zplug "changyuheng/fz", depth:1
 zplug "chrissicool/zsh-256color", depth:1
-# zplug "jeffreytse/zsh-vi-mode", depth:1
-# zplug "marlonrichert/zsh-autocomplete", defer:2, depth:1
 zplug "mtxr/zsh-change-case", depth:1
 zplug "plugins/colored-man-pages", from:oh-my-zsh, defer:2, depth:1
 zplug "plugins/command-not-found", from:oh-my-zsh, depth:1
@@ -30,8 +27,6 @@ zplug "plugins/web-search", from:oh-my-zsh, depth:1
 zplug "plugins/z", from:oh-my-zsh, depth:1
 zplug "reegnz/jq-zsh-plugin", depth:1
 zplug "romkatv/powerlevel10k", as:theme, depth:1
-zplug "sei40kr/fast-alias-tips-bin", from:gh-r, as:command, rename-to:def-matcher, depth:1
-zplug "sei40kr/zsh-fast-alias-tips", depth:1
 zplug "teonsean-dm/zsh-up-dir", defer:2, depth:1
 zplug "zdharma-continuum/fast-syntax-highlighting", defer:2, depth:1
 zplug "zsh-users/zsh-completions", depth:1
@@ -81,21 +76,20 @@ bindkey "^[[B" history-beginning-search-forward-end
 bindkey '^K^U' _mtxr-to-upper # Ctrl+K + Ctrl+U
 bindkey '^K^L' _mtxr-to-lower # Ctrl+K + Ctrl+L
 bindkey '^@' quick-exa
-bindkey "^[[1;5A" beginning-of-line
-bindkey "^[[1;5B" end-of-line
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-bindkey "^H" backward-kill-word
-bindkey "^[[3;5~" kill-word
+# bindkey "^[[1;5A" beginning-of-line
+# bindkey "^[[1;5B" end-of-line
+# bindkey "^[[1;5C" forward-word
+# bindkey "^[[1;5D" backward-word
+# bindkey "^H" backward-kill-word
+# bindkey "^[[3;5~" kill-word
 # bindkey -M vicmd ' ' vi-easy-motion
 
-source $HOME/.config/broot/launcher/bash/br
-source $HOME/.fzf/shell/key-bindings.zsh
-source $HOME/.fzf/shell/completion.zsh
+source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
+source $(brew --prefix)/opt/fzf/shell/completion.zsh
 
-export EDITOR='nvim'
+export EDITOR='vim'
 export VIEWER="bat"
-export VISUAL='nvim'
+export VISUAL='vim'
 export PAGER='less'
 
 export HISTFILE=$HOME/.zsh_history
@@ -103,5 +97,9 @@ export SAVEHIST=100000
 export HISTSIZE=200000
 
 # export AUTO_NOTIFY_IGNORE=("python" "python3.8" "ssh")
-export PATH=$PATH:$HOME/.fzf/bin
+export PATH=$PATH:$(brew --prefix)/opt/fzf/bin
 export fpath=($ZDOTDIR/completions $fpath)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /Users/teo/.config/broot/launcher/bash/br
